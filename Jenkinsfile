@@ -5,8 +5,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout the Git repository
-                // git url: 'https://github.com/ImAdSamadi/CF-DevOps.git', branch: 'main'
-                sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
+                 git url: 'https://github.com/ImAdSamadi/CF-DevOps.git', branch: 'main'
+
                 
             }
         }
@@ -21,13 +21,8 @@ pipeline {
                     def currentDir = pwd()
                     echo "Current directory: ${currentDir}"
                     
-                    // Navigate to the directory containing the Maven project
-                    dir('java-maven/maven') {
-                        // Run Maven commands
-                        // sh 'mvn clean test package'
-                    }
+                }
             }
-        }
         }
 
         
