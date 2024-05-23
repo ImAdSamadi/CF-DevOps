@@ -46,7 +46,7 @@ pipeline {
                     # sudo systemctl stop myapp
 
                     # Copy the new application files
-                    cp -r ./myapp /opt/myapp
+                    # cp -r ./myapp /opt/myapp
 
                     # Start the application
                     # sudo systemctl start myapp
