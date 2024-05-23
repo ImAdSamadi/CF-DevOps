@@ -13,7 +13,7 @@ pipeline {
                 // clean the directory
                 sh "rm -rf *"
                 // Checkout the Git repository
-                sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
+                // sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
             }
         }
     
