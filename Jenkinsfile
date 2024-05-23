@@ -30,7 +30,7 @@ pipeline {
                     
                     dir('CF-DevOps') {
                         sh 'mvn clean package'
-                        // sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
+                        sh 'java -jar target/maven-0.0.1-SNAPSHOT.jar'
                     }
                     
                    
