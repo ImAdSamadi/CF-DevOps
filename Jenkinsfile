@@ -28,7 +28,7 @@ pipeline {
                     
                     // Navigate to the directory containing the Maven project
                     
-                    dir('/') {
+                    dir('CF-DevOps') {
                         sh 'mvn clean package'
                         sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
                     }
