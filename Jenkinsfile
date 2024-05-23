@@ -60,7 +60,7 @@ pipeline {
         stage('Notify Slack'){
             steps {
                 script {
-                    def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+                    //def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
                     //Add channel name
                     slackSend channel: 'mavenproject',
                     message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER}"
