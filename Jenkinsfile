@@ -49,25 +49,6 @@ pipeline {
             steps {
                 echo 'Deploying...'
                 sh '''
-                    # Define variables for paths
-                    APP_NAME="CF-DevOps"
-                    BUILD_ARTIFACT="build-artifact.zip"
-                    DEPLOY_DIR="/opt/$CF-DevOps"
-                    BACKUP_DIR="/opt/${CF-DevOps}_backup"
-                    
-                    # Backup current application
-                    if [ -d "$CF-DevOps" ]; then
-                        mv $DEPLOY_DIR $BACKUP_DIR
-                    fi
-                    
-                    # Create new deployment directory
-                    mkdir -p $DEPLOY_DIR
-                    
-                    # Unzip and copy the new application files
-                    unzip $BUILD_ARTIFACT -d $DEPLOY_DIR
-                    
-                    # Set the appropriate permissions
-                    chown -R $USER:$USER $DEPLOY_DIR
                     
                 '''
             }
