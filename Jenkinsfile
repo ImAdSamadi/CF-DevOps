@@ -69,9 +69,6 @@ pipeline {
                     # Set the appropriate permissions
                     chown -R $USER:$USER $DEPLOY_DIR
                     
-                    # Start the application
-                    sudo systemctl start $CF-DevOps
-                    
                 '''
             }
         }
