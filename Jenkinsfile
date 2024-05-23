@@ -57,7 +57,7 @@ pipeline {
                     
                     # Backup current application
                     if [ -d "$CF-DevOps" ]; then
-                        sudo mv $DEPLOY_DIR $BACKUP_DIR
+                        mv $DEPLOY_DIR $BACKUP_DIR
                     fi
                     
                     # Create new deployment directory
