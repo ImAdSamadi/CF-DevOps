@@ -75,8 +75,6 @@ pipeline {
                     # Start the application
                     sudo systemctl start $CF-DevOps
                     
-                    # Optionally, check the status
-                    systemctl status $CF-DevOps
                 '''
             }
         }
