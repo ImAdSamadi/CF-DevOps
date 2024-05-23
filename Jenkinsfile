@@ -30,7 +30,7 @@ pipeline {
                     
                     dir('java-maven/maven') {
                         sh 'mvn clean test package'
-                        //sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
+                        sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
                     }
                     
                    
