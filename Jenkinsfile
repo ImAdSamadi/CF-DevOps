@@ -27,6 +27,7 @@ pipeline {
                     }
             }
         }
+        }
 
 
     post {
@@ -35,4 +36,5 @@ pipeline {
             echo 'Pipeline finished.'
         }
     }
+}
 }
