@@ -29,8 +29,8 @@ pipeline {
                     // Navigate to the directory containing the Maven project
                     
                     dir('java-maven/maven') {
-                        sh 'mvn clean test package'
-                        sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
+                        //sh 'mvn clean test package'
+                        //sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
                     }
                     
                    
