@@ -10,6 +10,7 @@ pipeline {
                 
             }
         }
+    
 
         stage('Build') {
             steps {
@@ -29,12 +30,6 @@ pipeline {
         }
         }
 
-
-    post {
-        always {
-            // Add steps that should always run after the pipeline, like sending notifications
-            echo 'Pipeline finished.'
-        }
+        
     }
-}
 }
