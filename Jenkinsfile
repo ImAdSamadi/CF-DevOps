@@ -13,7 +13,7 @@ pipeline {
                 // clean the directory
                 sh "rm -rf *"
                 // Checkout the Git repository
-                // sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
+                sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
             }
         }
     
@@ -30,7 +30,7 @@ pipeline {
                     
                     dir('CF-DevOps') {
                         sh 'mvn clean package'
-                        sh 'java -jar target/maven-0.0.1-SNAPSHOT.jar'
+                        //sh 'java -jar target/maven-0.0.1-SNAPSHOT.jar'
                     }
                     
                    
