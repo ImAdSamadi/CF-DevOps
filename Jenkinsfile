@@ -7,32 +7,33 @@ pipeline {
     }
     
     stages {
+
         stage('Checkout') {
             steps {
+                // clean the directory
+                sh "rm -rf *"
                 // Checkout the Git repository
-                 git url: 'https://github.com/ImAdSamadi/CF-DevOps.git', branch: 'main'
-
-                
+                sh "git clone https://github.com/ImAdSamadi/CF-DevOps.git"
             }
         }
     
 
         stage('Build') {
             steps {
-                // Add your build steps here
-                echo 'Building...'
+                // Here, we can can run Maven commands
                 script {
                     
                     def currentDir = pwd()
                     echo "Current directory: ${currentDir}"
-
-                     // Navigate to the directory containing the Maven project
+                    
+                    // Navigate to the directory containing the Maven project
                     dir('java-maven/maven') {
                         // Run Maven commands
                         sh 'mvn clean test package'
                         sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
                     }
                     
+                   
                 }
             }
         }
@@ -83,7 +84,9 @@ pipeline {
         stage('Notify Slack'){
             steps {
                 script {
-                    //def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+                    def artifactPath = "java-maven/maven/target/maven-0.0.1-SNAPSHOT.jar"
+                    def artifactURL = "${env.JENKINS_URL}/job/${env.JOB_NAME}/${env.BUILD_NUMBER}/artifact/${artifactPath}"
+                    
                     //Add channel name
                     slackSend channel: 'mavenproject',
                     message: "Un nouveau build Java est disponible: ---> Resultat: ${currentBuild.currentResult}, Job: ${env.JOB_NAME}, Build: ${env.BUILD_NUMBER}"
