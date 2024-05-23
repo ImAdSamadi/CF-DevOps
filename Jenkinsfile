@@ -56,7 +56,7 @@ pipeline {
                     BACKUP_DIR="/opt/${CF-DevOps}_backup"
                     
                     # Stop the existing application
-                    sudo systemctl stop $CF-DevOps
+                    systemctl stop $CF-DevOps
                     
                     # Backup current application
                     if [ -d "$CF-DevOps" ]; then
@@ -64,19 +64,19 @@ pipeline {
                     fi
                     
                     # Create new deployment directory
-                    sudo mkdir -p $DEPLOY_DIR
+                    mkdir -p $DEPLOY_DIR
                     
                     # Unzip and copy the new application files
-                    sudo unzip $BUILD_ARTIFACT -d $DEPLOY_DIR
+                    unzip $BUILD_ARTIFACT -d $DEPLOY_DIR
                     
                     # Set the appropriate permissions
-                    sudo chown -R $USER:$USER $DEPLOY_DIR
+                    chown -R $USER:$USER $DEPLOY_DIR
                     
                     # Start the application
                     sudo systemctl start $CF-DevOps
                     
                     # Optionally, check the status
-                    sudo systemctl status $CF-DevOps
+                    systemctl status $CF-DevOps
                 '''
             }
         }
