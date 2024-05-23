@@ -43,16 +43,16 @@ pipeline {
                 sh '''
                     # Example deployment script
                     # Stop the existing application
-                    sudo systemctl stop myapp
+                    # sudo systemctl stop myapp
 
                     # Copy the new application files
-                    sudo cp -r ./myapp /opt/myapp
+                    cp -r ./myapp /opt/myapp
 
                     # Start the application
-                    sudo systemctl start myapp
+                    # sudo systemctl start myapp
 
                     # Optionally, check the status
-                    sudo systemctl status myapp
+                    # sudo systemctl status myapp
                 '''
             }
         }
