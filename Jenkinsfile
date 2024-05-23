@@ -28,10 +28,10 @@ pipeline {
                     
                     // Navigate to the directory containing the Maven project
                     
-                    dir('java-maven/maven') { // Change this path to where your pom.xml is located
+                    
                         sh 'mvn clean test package'
                         sh "java -jar target/maven-0.0.1-SNAPSHOT.jar"
-                    }
+                    
                     
                    
                 }
