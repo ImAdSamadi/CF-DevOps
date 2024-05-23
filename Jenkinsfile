@@ -55,9 +55,6 @@ pipeline {
                     DEPLOY_DIR="/opt/$CF-DevOps"
                     BACKUP_DIR="/opt/${CF-DevOps}_backup"
                     
-                    # Stop the existing application
-                    systemctl stop $CF-DevOps
-                    
                     # Backup current application
                     if [ -d "$CF-DevOps" ]; then
                         sudo mv $DEPLOY_DIR $BACKUP_DIR
